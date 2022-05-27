@@ -21,9 +21,32 @@ input.onButtonPressed(Button.A, function () {
         pins.digitalWritePin(DigitalPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)
         basic.pause(30000)
+        pins.digitalWritePin(DigitalPin.P4, 0)
+        pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
-basic.showString("Hello!")
+input.onButtonPressed(Button.B, function () {
+    led.enable(false)
+    while (0 == 0) {
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        pins.digitalWritePin(DigitalPin.P4, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P1, 0)
+        basic.pause(500)
+    }
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    led.enable(false)
+    while (0 == 0) {
+        pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P1, 0)
+        pins.digitalWritePin(DigitalPin.P2, 1)
+        pins.digitalWritePin(DigitalPin.P3, 0)
+        pins.digitalWritePin(DigitalPin.P4, 1)
+    }
+})
+led.enable(true)
+basic.showString("This is Traffic Light for micro:bit !!BETA!! ")
 while (0 == 0) {
     basic.showLeds(`
         # # # # #
