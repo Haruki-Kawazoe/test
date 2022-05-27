@@ -37,15 +37,15 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     led.enable(false)
-    while (0 == 0) {
-        pins.digitalWritePin(DigitalPin.P0, 0)
-        pins.digitalWritePin(DigitalPin.P1, 0)
-        pins.digitalWritePin(DigitalPin.P2, 1)
-        pins.digitalWritePin(DigitalPin.P3, 0)
-        pins.digitalWritePin(DigitalPin.P4, 1)
-    }
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P2, 1)
+    pins.digitalWritePin(DigitalPin.P3, 0)
+    pins.digitalWritePin(DigitalPin.P4, 1)
 })
 led.enable(true)
+serial.redirectToUSB()
+radio.setGroup(1)
 basic.showString("This is Traffic Light for micro:bit !!BETA!! ")
 while (0 == 0) {
     basic.showLeds(`
@@ -73,15 +73,15 @@ while (0 == 0) {
         `)
     basic.pause(500)
     basic.showLeds(`
-        . # . # .
         . # # # .
+        . . # # .
         . . # . .
         . . . . .
         . # # # .
         `)
     basic.pause(500)
     basic.showLeds(`
-        . # . . .
+        . . # . .
         . # # # .
         . . # . .
         . . . . .
@@ -140,3 +140,10 @@ while (0 == 0) {
     }
     basic.pause(500)
 }
+basic.forever(function () {
+    serial.writeNumbers([
+    input.soundLevel(),
+    input.runningTime(),
+    input.temperature()
+    ])
+})
