@@ -37,6 +37,7 @@ serial.onDataReceived("serial", function () {
         input.runningTime() / 1000,
         input.temperature()
         ])
+        basic.pause(500)
     }
 })
 input.onButtonPressed(Button.B, function () {
