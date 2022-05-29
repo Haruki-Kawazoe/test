@@ -31,11 +31,13 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 serial.onDataReceived("serial", function () {
-    serial.writeNumbers([
-    input.soundLevel(),
-    input.runningTime() / 1000,
-    input.temperature()
-    ])
+    while (0 == 0) {
+        serial.writeNumbers([
+        input.soundLevel(),
+        input.runningTime() / 1000,
+        input.temperature()
+        ])
+    }
 })
 input.onButtonPressed(Button.B, function () {
     led.enable(false)
@@ -69,7 +71,7 @@ led.enable(true)
 serial.redirectToUSB()
 radio.setGroup(1)
 basic.showString("This is Traffic Light for micro:bit !!BETA!! ")
-while (0 == 0) {
+while (false) {
     basic.showLeds(`
         # # # # #
         . # # # .
