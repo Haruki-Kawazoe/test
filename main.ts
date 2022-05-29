@@ -25,6 +25,13 @@ input.onButtonPressed(Button.A, function () {
         pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
+serial.onDataReceived("serial", function () {
+    serial.writeNumbers([
+    input.soundLevel(),
+    input.runningTime(),
+    input.temperature()
+    ])
+})
 input.onButtonPressed(Button.B, function () {
     led.enable(false)
     while (0 == 0) {
@@ -140,10 +147,3 @@ while (0 == 0) {
     }
     basic.pause(500)
 }
-basic.forever(function () {
-    serial.writeNumbers([
-    input.soundLevel(),
-    input.runningTime(),
-    input.temperature()
-    ])
-})
