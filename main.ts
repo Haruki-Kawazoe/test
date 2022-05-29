@@ -165,3 +165,8 @@ while (0 == 0) {
     }
     basic.pause(500)
 }
+basic.forever(function () {
+    while (input.temperature() < 60 || input.temperature() > -30) {
+        control.reset()
+    }
+})
