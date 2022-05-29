@@ -3,6 +3,11 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
 })
 input.onButtonPressed(Button.A, function () {
     led.enable(false)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P2, 0)
+    pins.digitalWritePin(DigitalPin.P3, 0)
+    pins.digitalWritePin(DigitalPin.P4, 0)
     while (0 == 0) {
         pins.digitalWritePin(DigitalPin.P0, 1)
         pins.digitalWritePin(DigitalPin.P3, 1)
@@ -28,12 +33,17 @@ input.onButtonPressed(Button.A, function () {
 serial.onDataReceived("serial", function () {
     serial.writeNumbers([
     input.soundLevel(),
-    input.runningTime(),
+    input.runningTime() / 1000,
     input.temperature()
     ])
 })
 input.onButtonPressed(Button.B, function () {
     led.enable(false)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P2, 0)
+    pins.digitalWritePin(DigitalPin.P3, 0)
+    pins.digitalWritePin(DigitalPin.P4, 0)
     while (0 == 0) {
         pins.digitalWritePin(DigitalPin.P1, 1)
         pins.digitalWritePin(DigitalPin.P4, 1)
@@ -44,6 +54,11 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     led.enable(false)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P2, 0)
+    pins.digitalWritePin(DigitalPin.P3, 0)
+    pins.digitalWritePin(DigitalPin.P4, 0)
     pins.digitalWritePin(DigitalPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P1, 0)
     pins.digitalWritePin(DigitalPin.P2, 1)
