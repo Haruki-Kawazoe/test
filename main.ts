@@ -71,7 +71,7 @@ led.enable(true)
 serial.redirectToUSB()
 radio.setGroup(1)
 basic.showString("This is Traffic Light for micro:bit !!BETA!! ")
-while (false) {
+while (0 == 0) {
     basic.showLeds(`
         # # # # #
         . # # # .
