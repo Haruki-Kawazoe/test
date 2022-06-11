@@ -26,8 +26,9 @@ MakeCode でこのリポジトリを編集します。
 ![生成されたブロック](https://github.com/haruki-kawazoe/test/raw/master/.github/makecode/blocks.png)
 
 ## 内容を変更してブランチを作成する
-1 Githubのブランチから新しい名前でブランチを作る。
-2 makecodeに戻り作成したブランチを選択し、変更をコミットする。
+
+#1 Githubのブランチから新しい名前でブランチを作る。
+#2 makecodeに戻り作成したブランチを選択し、変更をコミットする。
 
 #### メタデータ (検索、レンダリングに使用)
 
